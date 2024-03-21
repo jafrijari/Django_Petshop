@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{p.product_picture.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{p.id}}</h5>
+
+              {% if decision %}
+              <h5 class="card-title" style="color: red;">{{p.id}}: {{p.product_name |upper}}</h5>
+
+              {% else %}
+              <p class="card-title">{{p.product_name |upper}}</p>
+
+              {% endif %}
+
+
+              
+              {% if decision %}
+              <h5 class="card-title" style="color: blue;">{{p.id}}: {{p.product_price |upper}}</h5>
+
+              {% else %}
+              <p class="card-title">{{p.product_price |upper}}</p>
+
+              {% endif %}
+              
+
+              <p class="card-text"><b>{{p.product_description|first}}</b>{{p.product_description|slice:"1:"}}</p>
+              <!--<p class="card-text">{{p.product_price|floatformat:2}}</p> -->
+              <!--
+              <p class="card-text">{{p.product_brand}}</p>  add |len to find length of product brand
+              <p class="card-text">Jari {{ "Jari"|add:"jafri"}}</p>
+              <p class="card-text">Jari {{ "Jari"|length_is:10}}</p>
+              <p class="card-text"> {{ 5|add:10}}</p>
+              <p class="card-text"><small class="text-muted"> Jari {{ "Jari"|cut:"a"}}</small></p>
+              -->
+              
+              
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>

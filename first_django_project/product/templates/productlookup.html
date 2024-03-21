@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    {% include 'links.html' %}
+</head>
+<body>
+    {% include 'navbar.html'  %}
+    
+        
+
+        {% for obj in product %}
+
+        <!-- <p style="border: 2px solid black; text-align: center;">{{ forloop.counter }}</p>
+        <p style="border: 2px solid black; text-align: center;">{{ forloop.counter0 }}</p>
+        <p style="border: 2px solid black; text-align: center;">{{ forloop.revcounter }}</p>
+        <p style="border: 2px solid black; text-align: center;">{{ forloop.revcounter0 }}</p>
+        <p style="border: 2px solid black; text-align: center;">{{ forloop.first }}</p>
+        <p style="border: 2px solid black; text-align: center;">{{ forloop.last }}</p> -->
+
+
+
+        {% include 'productcard.html' with p=obj decision=forloop.last %}
+        
+        {% endfor %}
+    
+    
+</body>
+</html>
